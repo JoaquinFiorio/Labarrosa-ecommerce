@@ -1,0 +1,26 @@
+<section>
+  <div class="titulo">
+    <h1>Carrito de Compras</h1>
+  </div>
+  <div class="compras">
+    <div class="producto" *ngFor="let producto of productoService.productosCarrito">
+      <img [src]="'http://localhost:4000/' + producto.imagePath" alt="">
+      <div class="descripcion">
+        <h3>{{ producto.title }}</h3>
+        <span>{{ producto.categoria }}</span>
+        <h3>{{ producto.precio | currency }}</h3>
+        <h5>{{ producto.description }}</h5>
+      </div>
+      <div class="eliminar">
+        <button (click)="eliminarDelCarrito(producto)" class="trash"><i class="fas fa-trash"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="precioTotal">
+    <h1>Precio Total:</h1>
+    <h1>{{ total | currency }}</h1>
+  </div>
+  <div class="pagar">
+    <button>PAGAR</button>
+  </div>
+</section>

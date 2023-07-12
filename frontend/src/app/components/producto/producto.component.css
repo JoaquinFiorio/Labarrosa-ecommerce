@@ -1,0 +1,44 @@
+section{
+  margin-top: 50px;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.producto{
+  color: white;
+  display: flex;
+  width: 70%;
+  background-color: #212121;
+  gap: 50px;
+}
+
+.producto img{
+  width: 30%;
+}
+
+.descripcion{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 25px;
+  padding: 20px 0px;
+}
+
+span{
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+button{
+  margin-top: 50px;
+  padding: 15px 30px;
+  text-align: center;
+  background: linear-gradient(#ffde80, #f7aa5f);
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 19px;
+}

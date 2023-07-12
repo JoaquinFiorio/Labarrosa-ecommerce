@@ -1,0 +1,80 @@
+.contenedor{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 6%;
+  margin-top: 50px;
+}
+
+h1{
+  color: white;
+}
+
+.buscador{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-right: 10%;
+  border-right: 3px solid #f7aa5f;
+}
+
+input[type="text"], input[type="submit"]{
+  height: 40px;
+  border: none;
+}
+
+input[type="text"]{
+  padding: 10px;
+}
+
+input[type="submit"]{
+  background: linear-gradient(#ffde80, #f7aa5f);
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.categorias {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: white;
+  padding-bottom: 200px;
+}
+
+.categorias h3{
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.productos{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  padding-left: 4%;
+}
+
+.producto{
+  background-color: #212121;
+  color: white;
+  width: 240px;
+  cursor: pointer;
+}
+
+.producto img{
+  width: 100%;
+}
+
+.descripcion{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+}
+
+.descripcion span, .descripcion h5{
+  opacity: 0.8;
+}
+
+form{
+  display: flex;
+}

@@ -1,0 +1,30 @@
+<div class="login">
+  <div class="ingreso">
+      <h1 style="margin-top: 40px;"><span>¡ </span>BIENVENIDO<span> !</span></h1>
+      <div class="formulario">
+          <form #miFormulario="ngForm" (ngSubmit)="iniciarSesion(miFormulario)">
+              <input type="email" name="email" placeholder="Correo Electrónico" required ngModel>
+              <h5 style="color: red;margin-top:-15px" *ngIf="error === 'Email equivocado'">Email no es el correcto</h5>
+              <input type="password" name="password" placeholder="Contraseña" required ngModel>
+              <h5 style="color: red;margin-top:-15px" *ngIf="error === 'Contraseña inválida'">Contraseña no es el correcto</h5>
+              <div class="olvidaste">
+                  <a routerLink="/olvidar" style="color: #f7aa5f;" href="">¿Olvidaste tu contraseña?</a>
+              </div>
+              <div>
+                  <input type="submit" value="Iniciar sesión">
+              </div>
+              <div class="sinCuenta">
+                  <p>¿No tienes una cuenta?</p>
+                  <a style="color: #f7aa5f;font-weight:bold" routerLink="/registro"><u>Registrarse</u></a>
+              </div>
+          </form>
+      </div>
+      <div class="imagenLapicera">
+        <img src="../../assets/img/fondo.jpeg" alt="">
+      </div>
+  </div>
+</div>
+<div class="pie">
+  <h3>La Barrosa <span>@2023</span></h3>
+  <h3 style="color: rgb(194, 191, 191); font-weight:400">Todos los derechos reservados</h3>
+</div>

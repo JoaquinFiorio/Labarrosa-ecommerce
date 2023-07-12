@@ -1,0 +1,60 @@
+<div class="login">
+  <ng-container *ngIf="satisfactorio === false; else mensajeSatisfactorio">
+    <div class="ingreso">
+        <div class="logo">
+            <img class="logotipo" src="../assets/img/logo1.png" alt="logo">
+        </div>
+        <h1 style="margin-top: 40px;"><span>¡ </span>REGÍSTRATE<span> !</span></h1>
+        <div class="formulario">
+            <form [formGroup]="miFormulario2" (ngSubmit)="registrarUsuario(miFormulario2)">
+                <input type="text" placeholder="Nombre" formControlName = "nombre" required ngModel>
+                <div *ngIf="miFormulario2.get('nombre')?.invalid && miFormulario2.get('nombre')?.['touched']">
+                  <h5 style="color: red;margin-top:-15px" *ngIf="miFormulario2.get('nombre')?.errors?.['required']">Campo obligatorio.</h5>
+                </div>
+                <input type="text" placeholder="Apellido" formControlName = "apellido" required ngModel>
+                <div *ngIf="miFormulario2.get('apellido')?.invalid && miFormulario2.get('apellido')?.['touched']">
+                  <h5 style="color: red;margin-top:-15px" *ngIf="miFormulario2.get('apellido')?.errors?.['required']">Campo obligatorio.</h5>
+                </div>
+                <input type="text" placeholder="Celular ej: +4372378923129" formControlName = "telefono" required ngModel>
+                <div *ngIf="miFormulario2.get('telefono')?.invalid && miFormulario2.get('telefono')?.['touched']">
+                  <h5 style="color: red;margin-top:-15px" *ngIf="miFormulario2.get('telefono')?.errors?.['required']">Campo obligatorio.</h5>
+                  <h5 style="color: red;margin-top:-15px" *ngIf="miFormulario2.get('telefono')?.errors?.['formatoInvalido']">Formato de teléfono inválido.</h5>
+                </div>
+                <h5 style="color: red;margin-top:-15px" *ngIf="error === 'Telefono en uso'">Teléfono ya se encuentra en uso</h5>
+                <input type="text" placeholder="País" formControlName = "pais" required ngModel>
+                <div *ngIf="miFormulario2.get('pais')?.invalid && miFormulario2.get('pais')?.['touched']">
+                  <h5 style="color: red;margin-top:-15px" *ngIf="miFormulario2.get('pais')?.errors?.['required']">Campo obligatorio.</h5>
+                </div>
+                <input type="text" placeholder="Ciudad" formControlName = "ciudad" required ngModel>
+                <div *ngIf="miFormulario2.get('ciudad')?.invalid && miFormulario2.get('ciudad')?.['touched']">
+                  <h5 style="color: red;margin-top:-15px" *ngIf="miFormulario2.get('ciudad')?.errors?.['required']">Campo obligatorio.</h5>
+                </div>
+                <input type="email" placeholder="Correo Electrónico" formControlName = "email" required ngModel>
+                <div *ngIf="miFormulario2.get('email')?.invalid && miFormulario2.get('email')?.['touched']">
+                  <h5 style="color: red;margin-top:-15px" *ngIf="miFormulario2.get('email')?.errors?.['required']">Campo obligatorio.</h5>
+                </div>
+                <h5 style="color: red;margin-top:-15px" *ngIf="error === 'Mail en uso'">Email ya se encuentra en uso</h5>
+                <input type="password" placeholder="Contraseña" formControlName = "password" required ngModel>
+                <div *ngIf="miFormulario2.get('password')?.invalid && miFormulario2.get('password')?.['touched']">
+                  <h5 style="color: red;margin-top:-15px" *ngIf="miFormulario2.get('password')?.errors?.['required']">Campo obligatorio.</h5>
+                </div>
+                <div>
+                    <input type="submit" value="Registrarse">
+                </div>
+                <div class="sinCuenta">
+                    <p>¿Ya tienes una cuenta?</p>
+                    <a style="color: #f7aa5f;font-weight:bold" routerLink="/login"><u>Inicia Sesión</u></a>
+                </div>
+            </form>
+        </div>
+    </div>
+  </ng-container>
+  <ng-template #mensajeSatisfactorio>
+    <h1 style="margin-top: 80px;color:white;text-align:center"><span>¡ </span>TE HAS REGISTRADO CON ÉXITO<span> !</span></h1>
+    <h3 style="margin-top: 30px;color:white;text-align:center">Verifica tu correo electrónico para verificar tu email.</h3>
+  </ng-template>
+</div>
+<div class="pie">
+  <h3>La Barrosa <span>@2023</span></h3>
+  <h3 style="color: rgb(194, 191, 191); font-weight:400">Todos los derechos reservados</h3>
+</div>

@@ -1,0 +1,29 @@
+<section>
+  <ng-container *ngIf="mensaje !== 'Email enviado'; else mostrarAnuncio">
+    <div class="titulo">
+      <h1>¿Olvidaste tu <span>Contraseña</span>?</h1>
+    </div>
+    <div class="titulo">
+      <h1>¡Te ayudamos a <span>Recuperarla</span>!</h1>
+    </div>
+    <div class="formulario">
+      <form #miFormulario="ngForm" (ngSubmit)="mandarEmail(miFormulario)">
+        Por favor, escribe el email de la contraseña que deseas recuperar.
+        <div class="inputs">
+          <input type="email" name="email" required placeholder="Email" ngModel>
+          <h5 style="color: red;margin-top:10px" *ngIf="mensaje === 'No se encontro el usuario'">Email no encontrado</h5>
+        </div>
+        <input type="submit" value="ENVIAR EMAIL"/>
+      </form>
+    </div>
+  </ng-container>
+  <ng-template #mostrarAnuncio>
+    <div class="titulo">
+      <h1>¡ Email enviado <span>con éxito </span>!</h1>
+    </div>
+    <div class="titulo">
+      <h4>Revisa tu casilla de "Spam" en caso de que no lo encuentres</h4>
+    </div>
+  </ng-template>
+</section>
+

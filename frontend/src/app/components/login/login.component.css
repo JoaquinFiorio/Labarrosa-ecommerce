@@ -1,0 +1,134 @@
+.login{
+  margin: 40px auto ;
+  padding: 0 13%;
+}
+
+.logo{
+display: flex;
+align-items: flex-end;
+gap: 10px;
+}
+
+.logo .logotipo{
+width: 10%;
+}
+
+
+.ingreso{
+  background-color: #212121;
+  padding: 50px ;
+  border-radius: 65px;
+  font-family: sans-serif;
+  color:white;
+  position: relative;
+}
+
+.formulario{
+margin-top: 30px;
+}
+
+form{
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+input[type="email"], input[type="password"]{
+width: 45%;
+padding-left: 10px;
+color: #212121;
+border-radius: 9px;
+border: none;
+height: 35px;
+font-size: 20px;
+}
+
+input[type="submit"]{
+width: 45%;
+padding: 10px;
+text-align: center;
+background: linear-gradient(#ffde80, #f7aa5f);
+border: none;
+border-radius: 25px;
+font-size: 17px;
+}
+
+.olvidaste{
+width: 45%;
+display: flex;
+justify-content: flex-end;
+}
+
+.sinCuenta{
+display: flex;
+flex-direction: column;
+gap: 10px;
+width: 45%;
+text-align: center;
+}
+
+.imagenOro img{
+width: 57%;
+position: absolute;
+right: -2%;
+top: 67%;
+bottom: 0;
+}
+
+.imagenLapicera img{
+position: absolute;
+right: 0;
+top: 0;
+bottom: 0;
+overflow-x: hidden;
+width: 45%;
+height: 100%;
+border-radius: 55px;
+}
+
+/*#f7aa5f*/
+
+span{
+  color: #f7aa5f
+}
+
+.pie{
+margin-left: 18%;
+margin-top: -15px;
+color: white;
+}
+
+@media (max-width:420px){
+  .login{
+    padding: 0 5%;
+  }
+  .logo .logotipo{
+    width: 30%;
+  }
+  .logo .hbm{
+    width: 45%;
+  }
+  .ingreso{
+    padding: 35px;
+  }
+  .ingreso h1{
+    font-size: 26px;
+  }
+  .imagenLapicera, .imagenOro{
+    display: none;
+  }
+  input[type="email"], input[type="password"]{
+    width: 100%;
+    font-size: 13px;
+  }
+  .olvidaste, input[type="submit"], .sinCuenta{
+    width: 100%;
+  }
+  .pie{
+    margin-left: 0%;
+    text-align: center;
+  }
+  .pie h3{
+    font-size: 15px;
+  }
+}

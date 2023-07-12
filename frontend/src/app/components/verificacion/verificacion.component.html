@@ -1,0 +1,15 @@
+<p>verificacion works!</p>
+<section>
+  <div class="titulo">
+    <h1>¡Ya casi completas <span>tu registro</span>!</h1>
+  </div>
+  <div class="titulo">
+    <h1>¡Verifica <span>tu email</span>!</h1>
+  </div>
+  <div *ngIf="mensaje === 'Usuario no encontrado'" class="titulo" style="margin-top: 30px;">
+    <h1>Usuario no encontrado</h1>
+  </div>
+  <div class="boton">
+    <button (click)="verificarEmail()">CONFIRMAR EMAIL</button>
+  </div>
+</section>

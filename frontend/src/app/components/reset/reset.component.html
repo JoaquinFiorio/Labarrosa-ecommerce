@@ -1,0 +1,17 @@
+<section>
+  <div class="titulo">
+    <h1>¡Ya casi <span>lo logras</span>!</h1>
+  </div>
+  <div class="titulo">
+    <h1>¡Estas a un paso de recuperar <span>tu contraseña</span>!</h1>
+  </div>
+  <div class="formulario">
+    <form #miFormulario="ngForm" (ngSubmit)="resetPassword(miFormulario)">
+      Por favor, escribe una nueva contraseña para tu cuenta.
+      <div class="inputs">
+        <input type="text" name="password" required placeholder="Nueva contraseña" ngModel>
+      </div>
+      <input type="submit" value="CONFIRMAR NUEVA CONTRASEÑA"/>
+    </form>
+  </div>
+</section>

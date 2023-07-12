@@ -1,0 +1,67 @@
+@media (min-width:1400px){
+  .container img{
+    width: 26%;
+    bottom: -46px;
+  }
+  .division{
+    padding: 70px;
+    margin-top: -80px;
+  }
+  .divisionn img{
+    width: 85%;
+    margin-top: -15px;
+  }
+  .divisiones{
+    gap: 140px;
+  }
+  .division2, .division3{
+    padding: 40px;
+  }
+  .imagenDerecha{
+    gap: 90px;
+  }
+  .imagenIzquierda{
+    gap: 80px;
+  }
+  h6{
+    font-size: 20px;
+  }
+  .texto{
+    padding-top: 0px;
+  }
+  .fondoCapitales p{
+    font-size: 22px;
+  }
+  .parrafo h1{
+    font-size: 50px;
+  }
+  .parrafo p{
+    font-size: 25px ;
+  }
+  .parrafo{
+    margin-top: 50px;
+  }
+  .imagenLapicera img{
+    width: 33%;
+  }
+  .imagenOro img{
+    width: 50%;
+    top: 60%;
+  }
+  input[type="text"], input[type="email"], input[type="password"]{
+    height: 50px;
+    border-radius: 15px;
+  }
+  textarea{
+    height: 120px;
+  }
+  .areas button{
+    padding: 40px 30px;
+  }
+  .lingotes{
+    bottom: -55px;
+  }
+  .lingote{
+    bottom: -40px;
+  }
+}
