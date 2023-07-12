@@ -1,0 +1,78 @@
+###
+POST http://localhost:3000/api/user/signup
+Content-Type: application/json
+
+{
+    "nombre": "Joaquin",
+    "apellido": "Fiorio",
+    "pais": "Argentina",
+    "ciudad": "pergamino",
+    "telefono": 2477358701,
+    "direccion": "dorrego 630",
+    "email": "joaquin.fiorio12@hotmail.com",
+    "direccion":"dorrego 620",
+    "password": 12345
+}
+
+###
+POST http://localhost:3000/api/user/signin
+Content-Type: application/json
+
+{
+    "email": "joaquin.fiorio12@hotmail.com",
+    "password": "12345"
+}
+
+###
+PUT http://localhost:3000/api/user/user/64a5cf11a613bcdbd397c4d5
+Content-Type: application/json
+
+{
+    "nombre": "Joaquin",
+    "apellido": "Fiorio",
+    "pais": "Argentina",
+    "ciudad": "pergamino",
+    "telefono": 2477358701,
+    "direccion": "dorrego 630"
+}
+
+###
+POST http://localhost:3000/api/pedidos
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTVkY2UwMzUzMjcwNTI0ZTdiNzAxZiIsImlhdCI6MTY4ODg2Njk2MywiZXhwIjoxNjg4OTUzMzYzfQ.S7-odUwjwfBJqj4iPRgr3ci6OPlbhuZwHk_uctLrs2c
+
+{
+    "producto": "Maicol",
+    "estado": "pendiente",
+    "infoUsuario": {
+        "nombre": "Joaquin",
+        "apellido": "Fiorio",
+        "pais": "Argentina",
+        "ciudad": "pergamino",
+        "telefono": 2477358701,
+        "direccion": "dorrego 630"
+    }
+}
+
+###
+DELETE http://localhost:3000/api/pedidos
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTVkY2UwMzUzMjcwNTI0ZTdiNzAxZiIsImlhdCI6MTY4ODg2Njk2MywiZXhwIjoxNjg4OTUzMzYzfQ.S7-odUwjwfBJqj4iPRgr3ci6OPlbhuZwHk_uctLrs2c
+
+{
+    "id": "ab1ec310-1dff-11ee-b8eb-6574c15edc76",
+    "producto": "Maicol",
+    "estado": "pendiente",
+    "infoUsuario": {
+        "nombre": "Joaquin",
+        "apellido": "Fiorio",
+        "pais": "Argentina",
+        "ciudad": "pergamino",
+        "telefono": 2477358701,
+        "direccion": "dorrego 630"
+    }
+}
+
+###
+GET http://localhost:3000/api/pedidos
+Content-Type: application/json
