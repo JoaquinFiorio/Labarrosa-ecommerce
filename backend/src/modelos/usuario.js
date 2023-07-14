@@ -12,11 +12,11 @@ const userSchema = new Schema(
         telefono: String,
         email: String,
         password: String,
-        carrito: Array,
         pedidos: [
             {
                 id: String,
-                producto: String,
+                precio: Number,
+                producto: Object,
                 estado: String,
                 infoUsuario: Object,
             }

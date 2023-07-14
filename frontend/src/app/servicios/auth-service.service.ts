@@ -11,6 +11,7 @@ export class AuthServiceService {
 
   url = "http://localhost:3000/api";
   user = "";
+  usuarioActual = {}
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -47,6 +48,18 @@ export class AuthServiceService {
 
   resetPassword(id : string, password : any): Observable<any>{
     return this.http.put(this.url + "/forgot/" + id, password)
+  }
+
+  getUsuario() {
+    return this.http.get(this.url + "/user/usuarioUnico")
+  }
+
+  changeUserInfo(user: any) {
+    return this.http.put(this.url + "/user/user", user)
+  }
+
+  hacerPedido(pedido: any) {
+    return this.http.post(this.url + "/pedidos", pedido)
   }
 
 }

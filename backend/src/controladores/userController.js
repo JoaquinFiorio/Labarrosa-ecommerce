@@ -1,5 +1,6 @@
 const User = require("../modelos/usuario.js");
 const Role = require("../modelos/Role.js");
+const jwt = require("jsonwebtoken")
 
 createUser = async (req, res) => {
     try {
@@ -46,15 +47,21 @@ getUsers = async (req, res) => {
 };
 
 getUser = async (req, res) => {
-    const user = await User.findById(req.params.id);
+    const token = req.headers["x-access-token"];
+    if (!token) return res.status(401).send({ message: "No token provided" });
+    const decoded = jwt.verify(token, process.env.SECRET);
+    const user = await User.findById(decoded.id);
     return res.json(user);
 };
 
 changeUserInfo = async (req, res) => {
+    const token = req.headers["x-access-token"];
+    if (!token) return res.status(401).send({ message: "No token provided" });
     const { nombre, apellido, pais, ciudad, direccion, telefono } = req.body;
+    const decoded = jwt.verify(token, process.env.SECRET);
     
     try {
-        const user = await User.findById(req.params.id);
+        const user = await User.findById(decoded.id, {password: 0});
 
         if (!user) {
             return res.status(404).json({ error: 'Usuario no encontrado' });

@@ -30,7 +30,8 @@ hacerPedido = async (req, res) => {
         const pedido = {
             id: uuidv1(),
             producto: req.body.producto,
-            estado: req.body.estado,
+            estado: "Pendiente",
+            precio: req.body.precio,
             infoUsuario: req.body.infoUsuario
         };
 
@@ -43,6 +44,14 @@ hacerPedido = async (req, res) => {
         return res.status(500).json({ message: "Error en el servidor" });
     }
 };
+
+pedidoEnviado = async (req, res) => {
+
+}
+
+pedidoRecibido = async (req, res) => {
+    
+}
 
 deletePedido = async (req, res) => {
     try{

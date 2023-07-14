@@ -18,6 +18,8 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { AuthGuard } from './guards/auth.guard';
 import { SesionGuard } from './guards/sesion.guard';
 import { DataGuard } from './guards/data.guard';
+import { TokenInterceptor } from './token.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,12 @@ import { DataGuard } from './guards/data.guard';
   providers: [
     AuthGuard,
     SesionGuard,
-    DataGuard
+    DataGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

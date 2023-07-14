@@ -1,1 +1,24 @@
-<p>usuario works!</p>
+<div class="login">
+  <ng-container *ngIf="satisfactorio === false; else mensajeSatisfactorio">
+    <div class="ingreso">
+        <h1 style="margin-top: 40px;">CAMBIAR INFORMACIÓN DEL USUARIO</h1>
+        <div class="formulario">
+            <form [formGroup]="miFormulario2" (ngSubmit)="cambiarInfo(miFormulario2)">
+                <input [value]="usuario.nombre" type="text" placeholder="Nombre" formControlName = "nombre" required>
+                <input [value]="usuario.apellido" type="text" placeholder="Apellido" formControlName = "apellido" required>
+                <input [value]="usuario.telefono" type="text" placeholder="Celular ej: +4372378923129" formControlName = "telefono" required>
+                <input [value]="usuario.pais" type="text" placeholder="País" formControlName = "pais" required>
+                <input [value]="usuario.ciudad" type="text" placeholder="Ciudad" formControlName = "ciudad" required>
+                <input [value]="usuario.direccion" type="text" placeholder="Direccion" formControlName="direccion" required>
+                <div>
+                    <input type="submit" value="Cambiar Información">
+                </div>
+            </form>
+        </div>
+    </div>
+  </ng-container>
+  <ng-template #mensajeSatisfactorio>
+    <h1 style="margin-top: 80px;color:white;text-align:center"><span>¡ </span>TE HAS REGISTRADO CON ÉXITO<span> !</span></h1>
+    <h3 style="margin-top: 30px;color:white;text-align:center">Verifica tu correo electrónico para verificar tu email.</h3>
+  </ng-template>
+</div>

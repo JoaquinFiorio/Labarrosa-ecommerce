@@ -38,20 +38,7 @@ createAdmin = async () => {
     telefono: "+5492477358701",
     email: "joaquin.fiorio1@hotmail.com",
     password: "12345", // Corregido: la contraseña debe ser una cadena de texto
-    pedidos: [
-      {
-        producto: "mandarina",
-        estado: "pendiente"
-      },
-      {
-        producto: "pera",
-        estado: "enviada"
-      },
-      {
-        producto: "manzana",
-        estado: "recibida"
-      }
-    ],
+    direccion: "Dorrego 620",
     roles: roles.map((role) => role._id),
     verificado: true
   });

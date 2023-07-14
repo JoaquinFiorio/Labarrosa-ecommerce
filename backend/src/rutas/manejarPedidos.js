@@ -9,6 +9,10 @@ router.get("/", getPedidos);
 
 router.post("/", verifyToken, hacerPedido);
 
-router.delete("/",verifyToken, deletePedido);
+router.put("/enviado", pedidoEnviado);
+
+router.put("/recibido", pedidoRecibido);
+
+router.delete("/", deletePedido);
 
 module.exports = router;

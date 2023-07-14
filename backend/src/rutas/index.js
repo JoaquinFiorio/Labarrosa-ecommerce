@@ -13,11 +13,11 @@ router.use((req, res, next) => {
 
 router.get("/", getUsers);
 
-router.get("/:id", getUser)
+router.get("/usuarioUnico", getUser)
 
 router.post("/", createUser);
 
-router.put("/user/:id", changeUserInfo)
+router.put("/user", changeUserInfo)
 
 router.post("/signup", signupHandler);
 

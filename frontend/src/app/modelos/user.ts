@@ -4,10 +4,12 @@ export class User{
   apellido?: String;
   pais?: String;
   ciudad?: String;
+  direccion?: String;
   telefono?: String;
   email?: String;
   contraseña?: String;
   roles?:Array<any>;
+  pedidos?:Array<any>;
   verificado?: Boolean;
   createdAt?: Date;
   updatedAt?: Date;

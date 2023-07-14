@@ -39,11 +39,16 @@ Content-Type: application/json
 ###
 POST http://localhost:3000/api/pedidos
 Content-Type: application/json
-x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTVkY2UwMzUzMjcwNTI0ZTdiNzAxZiIsImlhdCI6MTY4ODg2Njk2MywiZXhwIjoxNjg4OTUzMzYzfQ.S7-odUwjwfBJqj4iPRgr3ci6OPlbhuZwHk_uctLrs2c
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YjE5ODZkZTM2YWM0Mjc3NTkyZTEwOSIsImlhdCI6MTY4OTM2MDQ5NiwiZXhwIjoxNjg5NDQ2ODk2fQ.O7lgHUnEcpljXaTYRamCPbwJrT6pcoyLv9crblpFXNk
 
 {
-    "producto": "Maicol",
-    "estado": "pendiente",
+    "producto": {
+        "nombre": "Joaquin",
+        "precio": "Fiorio",
+        "categoria": "Argentina",
+        "descripcion": "Joaquin"
+    },
+    "precio": 12,
     "infoUsuario": {
         "nombre": "Joaquin",
         "apellido": "Fiorio",
