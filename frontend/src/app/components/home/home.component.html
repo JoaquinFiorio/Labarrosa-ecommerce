@@ -26,14 +26,19 @@
     </div>
   </div>
   <div class="productos" *ngIf="filter">
-    <div class="producto"  (click)="producto._id && selectedCard(producto._id)" *ngFor="let producto of filteredProductos">
-      <img [src]= "'http://localhost:4000/' + producto.imagePath" alt="">
-      <div class="descripcion">
-        <h3>{{ producto.title }}</h3>
-        <span>{{ producto.categoria }}</span>
-        <h3>{{ producto.precio | currency }}</h3>
-        <h5>{{ producto.description }}</h5>
+    <div *ngIf="filteredProductos.length !== 0">
+      <div class="producto"  (click)="producto._id && selectedCard(producto._id)" *ngFor="let producto of filteredProductos">
+        <img [src]= "'http://localhost:4000/' + producto.imagePath" alt="">
+        <div class="descripcion">
+          <h3>{{ producto.title }}</h3>
+          <span>{{ producto.categoria }}</span>
+          <h3>{{ producto.precio | currency }}</h3>
+          <h5>{{ producto.description }}</h5>
+        </div>
       </div>
+    </div>
+    <div class="mensajeValor" *ngIf="filteredProductos.length === 0">
+      <h1>No se han encontrado resultados para la busqueda "{{ valor }}"</h1>
     </div>
   </div>
 </div>

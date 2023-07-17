@@ -1,0 +1,72 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #333;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.pedidos{
+  margin-top: 50px;
+  padding: 0 3%;
+}
+
+th {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #c0a16b;
+}
+
+tr:hover {
+  background-color: #555;
+}
+
+.mensaje{
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.warning {
+  color: #f7aa5f;
+  font-weight: 900;
+}
+
+.imagePreview{
+  cursor: pointer;
+}
+
+.enviado {
+  color: rgb(9, 129, 9);
+  font-weight: 900;
+}
+
+button{
+  padding: 10px 20px;
+  text-align: center;
+  background: linear-gradient(#ffde80, #f7aa5f);
+  border: none;
+  border-radius: 15px;
+  font-weight: 900;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Estilos para la imagen */
+td:first-child {
+  width: 2%;
+}
+
+td:first-child img {
+  max-width: 100%;
+  height: auto;
+}

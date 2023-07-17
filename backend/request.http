@@ -60,22 +60,12 @@ x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YjE5ODZkZTM2YWM
 }
 
 ###
-DELETE http://localhost:3000/api/pedidos
+DELETE http://localhost:3000/api/pedidos/eliminar
 Content-Type: application/json
-x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTVkY2UwMzUzMjcwNTI0ZTdiNzAxZiIsImlhdCI6MTY4ODg2Njk2MywiZXhwIjoxNjg4OTUzMzYzfQ.S7-odUwjwfBJqj4iPRgr3ci6OPlbhuZwHk_uctLrs2c
 
 {
-    "id": "ab1ec310-1dff-11ee-b8eb-6574c15edc76",
-    "producto": "Maicol",
-    "estado": "pendiente",
-    "infoUsuario": {
-        "nombre": "Joaquin",
-        "apellido": "Fiorio",
-        "pais": "Argentina",
-        "ciudad": "pergamino",
-        "telefono": 2477358701,
-        "direccion": "dorrego 630"
-    }
+    "id": "29b8cd80-2335-11ee-884f-47215a29c3ce",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YjJkNzNjMmY0YmJiMjM5OGE2M2Q1MCIsImlhdCI6MTY4OTQ0MjE0NiwiZXhwIjoxNjg5NTI4NTQ2fQ.5T0vA5UKnM4_OViWWzkiFjtbCpdcC0gnpVO3ML9-1Go"
 }
 
 ###

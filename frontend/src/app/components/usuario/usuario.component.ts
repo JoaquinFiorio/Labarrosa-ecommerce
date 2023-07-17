@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthServiceService } from '../../servicios/auth-service.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/modelos/user';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-usuario',
@@ -16,7 +17,7 @@ export class UsuarioComponent {
   miFormulario2: FormGroup;
   usuario: User = {};
 
-  constructor(private router: Router, private fb: FormBuilder, private auth: AuthServiceService) {
+  constructor(private toastr: ToastrService, private fb: FormBuilder, private auth: AuthServiceService) {
     this.miFormulario2 = this.fb.group({
       nombre: [this.usuario.nombre || '', Validators.required],
       apellido: [this.usuario.apellido || '', Validators.required],
@@ -65,10 +66,10 @@ export class UsuarioComponent {
     try {
       this.auth.changeUserInfo(user).subscribe({
         next: res => {
-          console.log(res)
+          this.toastr.success('Información cambiada con éxito', 'Sistema');
         },
         error: err => {
-          console.log(err)
+          this.toastr.success('Algo salió mal', 'Sistema');
         }
       })
     } catch (err) {

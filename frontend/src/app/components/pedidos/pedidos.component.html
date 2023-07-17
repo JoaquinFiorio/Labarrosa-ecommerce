@@ -1,1 +1,34 @@
-<p>pedidos works!</p>
+<div *ngIf="usuario && usuario.pedidos && usuario.pedidos.length !== 0">
+  <div class="pedidos" *ngFor="let pedidos of usuario.pedidos">
+    <table>
+      <thead>
+        <tr>
+          <th>Preview</th>
+          <th>Estado</th>
+          <th>Producto</th>
+          <th>Categoría</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Pedido</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="imagePreview">
+            <img [src]="'http://localhost:4000/' + pedidos?.producto?.imagePath" alt="">
+          </td>
+          <td [ngClass]="{'warning': pedidos.estado === 'Pendiente', 'enviado': pedidos.estado === 'Enviado'}">{{ pedidos.estado }}</td>
+          <td>{{ pedidos.producto.title }}</td>
+          <td>{{ pedidos.producto.categoria }}</td>
+          <td>{{ pedidos.producto.description }}</td>
+          <td>{{ pedidos.producto.precio | currency }}</td>
+          <td (click)="cancelarPedido(pedidos.id)" *ngIf="pedidos.estado === 'Pendiente'"><button>Cancelar Pedido</button></td>
+          <td *ngIf="pedidos.estado === 'Enviado' || pedidos.estado === 'Recibido'"><button>Pedido Despachado</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="mensaje" *ngIf="usuario && usuario.pedidos && usuario.pedidos.length === 0">
+  <h1>No hay pedidos activos en este usuario</h1>
+</div>

@@ -15,6 +15,7 @@ const userSchema = new Schema(
         pedidos: [
             {
                 id: String,
+                userToken: String,
                 precio: Number,
                 producto: Object,
                 estado: String,

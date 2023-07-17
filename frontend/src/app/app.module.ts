@@ -20,6 +20,8 @@ import { SesionGuard } from './guards/sesion.guard';
 import { DataGuard } from './guards/data.guard';
 import { TokenInterceptor } from './token.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     AuthGuard,

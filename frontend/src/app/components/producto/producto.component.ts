@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Photo } from 'src/app/modelos/photo';
 import { ProductoServiceService } from 'src/app/servicios/producto-service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-producto',
@@ -15,7 +16,7 @@ export class ProductoComponent {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productoService: ProductoServiceService,
+    private productoService: ProductoServiceService, private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -38,12 +39,14 @@ export class ProductoComponent {
       for (const producto of this.productoService.productosCarrito) {
         if (producto._id === this.producto?._id) {
           productoDuplicado = true;
+          this.toastr.warning('Pedido ya en el carrito', 'Sistema');
           break; // Ya agregaste este producto al carrito
         }
       }
     }
 
     if (!productoDuplicado) {
+      this.toastr.success('Pedido agregado al carrito con éxito', 'Sistema');
       this.productoService.productosCarrito.push(this.producto);
     }
   }

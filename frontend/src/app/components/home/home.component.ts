@@ -13,6 +13,7 @@ export class HomeComponent {
   productos: Photo[] = [];
   filter = false;
   filteredProductos: Photo[] = [];
+  valor: String = "";
 
   constructor(private producto: ProductoServiceService, private router: Router) {}
 
@@ -35,6 +36,7 @@ export class HomeComponent {
   }
 
   mostrarValor(valor: string) {
+    this.valor = valor;
     if(valor === 'Todos los productos') {
       this.filter = false;
     } else {
@@ -45,6 +47,7 @@ export class HomeComponent {
 
   submitForm(formValue: any) {
     this.filter = true;
+    this.valor = formValue.producto;
     this.filteredProductos = this.productos.filter(p => p.title.includes(formValue.producto))
   }
 

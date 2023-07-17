@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthServiceService } from '../../servicios/auth-service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-verificacion',
@@ -11,7 +12,8 @@ export class VerificacionComponent {
   id = "";
   mensaje = "";
 
-  constructor(private route: ActivatedRoute, private router: Router, private auth: AuthServiceService) {}
+  constructor(private route: ActivatedRoute,
+    private router: Router, private auth: AuthServiceService, private toastr: ToastrService) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -25,13 +27,11 @@ export class VerificacionComponent {
         this.router.navigate(["/home"]);
         this.auth.user = "";
         localStorage.removeItem("user");
+        this.toastr.success("Usuario verificado con éxito", "Sistema")
       },
       error: err => {
         if(err.error.message === "Usuario no encontrado"){
-          this.mensaje = "Usuario no encontrado";
-          setTimeout(() => {
-            this.router.navigate(["/login"]);
-          }, 3000);
+          this.toastr.error("Usuario no encontrado", "Sistema")
         }
       }
     })

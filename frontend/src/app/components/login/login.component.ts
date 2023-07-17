@@ -28,6 +28,9 @@ export class LoginComponent {
             this.auth.user = storedUser;
           }
           this.router.navigate(['/home']);
+          setTimeout(() => {
+            this.auth.logOut()
+          }, 604800000)
         },
         error: err => {
           console.log(err)

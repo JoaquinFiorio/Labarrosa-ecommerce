@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthServiceService } from '../../servicios/auth-service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-reset',
@@ -10,7 +11,9 @@ import { AuthServiceService } from '../../servicios/auth-service.service';
 export class ResetComponent {
   id = "";
 
-  constructor(private route: ActivatedRoute, private router: Router, private auth: AuthServiceService) {}
+  constructor(private route: ActivatedRoute,
+    private router: Router, private auth: AuthServiceService,
+    private toastr: ToastrService) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -26,8 +29,13 @@ export class ResetComponent {
     this.auth.resetPassword(this.id, userPassword).subscribe({
       next: res => {
         this.router.navigate(["/login"]);
+        this.toastr.success("Contraseña recuperada y cambiada correctamente", "Sistema")
       },
-      error: err => console.log(err)
+      error: err => {
+        if (err.error.message === "Usuario no encontrado") {
+          this.toastr.error("No se encontro el usuario", "Sistema")
+        }
+      }
     })
   }
 }

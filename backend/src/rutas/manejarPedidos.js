@@ -13,6 +13,8 @@ router.put("/enviado", pedidoEnviado);
 
 router.put("/recibido", pedidoRecibido);
 
-router.delete("/", deletePedido);
+router.put("/", verifyToken, deletePedido);
+
+router.put("/eliminar", deletePedidoAdmin);
 
 module.exports = router;

@@ -62,4 +62,8 @@ export class AuthServiceService {
     return this.http.post(this.url + "/pedidos", pedido)
   }
 
+  deletePedido(id: any) {
+    return this.http.put(this.url + "/pedidos", id)
+  }
+
 }

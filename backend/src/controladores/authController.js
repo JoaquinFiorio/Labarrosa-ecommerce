@@ -53,7 +53,7 @@ signupHandler = async (req, res) => {
 
         // Create a token
         const token = jwt.sign({ id: savedUser._id }, process.env.SECRET, {
-            expiresIn: 86400, // 24 hours
+            expiresIn: 604800, // 7 dyas
         });
 
         return res.status(200).json({ token });

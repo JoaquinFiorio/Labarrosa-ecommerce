@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: "verificacion/:id", component: VerificacionComponent},
   { path: "usuario", component: UsuarioComponent, canActivate: [AuthGuard]},
   { path: "pedidos", component: PedidosComponent, canActivate: [AuthGuard]},
-  { path: "carrito", component: CarritoComponent},
+  { path: "carrito", component: CarritoComponent, canActivate: [AuthGuard]},
   { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "**", redirectTo: "home" },
 ];
