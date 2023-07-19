@@ -28,6 +28,7 @@ app.use(session({
 app.use('/api/user', require('./rutas/index'));
 app.use('/api/forgot', require('./rutas/forgotpassword'))
 app.use('/api/pedidos', require('./rutas/manejarPedidos'))
+app.use('/api/pagar', require('./rutas/mercadoPago'))
 
 app.listen(app.get('port'), () => {
     console.log('Servidor en puerto', app.get('port'));

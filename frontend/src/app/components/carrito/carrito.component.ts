@@ -4,6 +4,7 @@ import { ProductoServiceService } from 'src/app/servicios/producto-service.servi
 import { User } from 'src/app/modelos/user';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-carrito',
@@ -13,6 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 export class CarritoComponent {
   total = 0;
   usuario: User = {}
+  botonDeshabilitado = false;
 
   constructor(public productoService : ProductoServiceService,
     private auth: AuthServiceService,
@@ -31,16 +33,28 @@ export class CarritoComponent {
   }
 
   eliminarDelCarrito(producto: any) {
-    this.productoService.productosCarrito = this.productoService.productosCarrito.filter(p => p._id !== producto._id)
-    this.total -= parseFloat(producto.precio)
-    this.toastr.error('Producto eliminado del carrito', 'Sistema');
+    Swal.fire({
+      title: '¿Estás seguro de eliminar esto del carrito?',
+      text: 'Esta acción no se puede deshacer.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'No'
+    }).then((result: any) => {
+      if (result.isConfirmed) {
+        this.productoService.productosCarrito = this.productoService.productosCarrito.filter(p => p._id !== producto._id)
+        this.total -= parseFloat(producto.precio)
+        this.toastr.error('Producto eliminado del carrito', 'Sistema');
+      } else if (result.dismiss === 'cancel') {
+        this.toastr.warning('No lo eliminaste del carrito', 'Sistema');
+      }
+    });
   }
 
   getUser() {
     this.auth.getUsuario().subscribe({
       next: res => {
         this.usuario = res;
-        console.log(res)
       },
       error: err => {
         console.log(err)
@@ -49,9 +63,10 @@ export class CarritoComponent {
   }
 
   agregarPedido() {
-    this.productoService.productosCarrito.forEach((producto) =>{
+    if(this.productoService.productosCarrito.length !== 0) {
+      this.botonDeshabilitado = true;
       const pedido = {
-        producto: producto,
+        producto: this.productoService.productosCarrito,
         precio: this.total,
         infoUsuario: {
           nombre: this.usuario.nombre,
@@ -62,16 +77,19 @@ export class CarritoComponent {
           direccion: this.usuario.direccion
         }
       }
-      this.auth.hacerPedido(pedido).subscribe({
+      this.auth.mercadoPago(pedido).subscribe({
         next: res => {
           this.toastr.success('Pedido realizado con éxito', 'Sistema');
           this.productoService.productosCarrito = []
-          this.router.navigate(["/pedidos"])
+          this.total = 0
+          window.location.href = res.sandbox_init_point
         },
         error: err => {
           console.log(err)
         }
       })
-    })
+    } else {
+      this.toastr.error('No hay productos en el carrito', 'Sistema');
+    }
   }
 }

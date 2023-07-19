@@ -21,6 +21,6 @@
     <h1>{{ total | currency }}</h1>
   </div>
   <div class="pagar">
-    <button (click)="agregarPedido()">PAGAR</button>
+    <button (click)="agregarPedido()" [disabled]="botonDeshabilitado">PAGAR</button>
   </div>
 </section>

@@ -7,8 +7,6 @@ require("../libs/middlewares")
 
 router.get("/", getPedidos);
 
-router.post("/", verifyToken, hacerPedido);
-
 router.put("/enviado", pedidoEnviado);
 
 router.put("/recibido", pedidoRecibido);

@@ -58,12 +58,12 @@ export class AuthServiceService {
     return this.http.put(this.url + "/user/user", user)
   }
 
-  hacerPedido(pedido: any) {
-    return this.http.post(this.url + "/pedidos", pedido)
-  }
-
   deletePedido(id: any) {
     return this.http.put(this.url + "/pedidos", id)
+  }
+
+  mercadoPago(precio: any) {
+    return this.http.post<any>(this.url + "/pagar/createOrder", precio)
   }
 
 }
