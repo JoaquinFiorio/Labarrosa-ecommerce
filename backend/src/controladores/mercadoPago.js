@@ -29,9 +29,9 @@ crearOrden = async (req, res) => {
             }
         ],
         back_urls: {
-            success: 'http://localhost:3000/api/pagar/success',
-            pendinding: 'http://localhost:3000/api/pagar/pending',
-            failure: 'http://localhost:3000/api/pagar/failure'
+            success: 'https://loteria-backend-production.up.railway.app//api/pagar/success',
+            pendinding: 'https://loteria-backend-production.up.railway.app//api/pagar/pending',
+            failure: 'https://loteria-backend-production.up.railway.app//api/pagar/failure'
         },
         notification_url: 'https://ab7a-45-224-102-140.ngrok-free.app/api/pagar/resultado'
     };
@@ -87,7 +87,7 @@ recibirOrden = async (req, res) => {
 
 ordenExitosa = (req, res) => {
     // Aquí, define la URL a la que deseas redireccionar (localhost:4200 en este caso)
-    const redirectUrl = 'http://localhost:4200'; // Cambia esto si necesitas una URL diferente
+    const redirectUrl = 'https://labarrosa-ecommerce.vercel.app/home'; // Cambia esto si necesitas una URL diferente
 
     // Realiza la redirección
     res.redirect(redirectUrl);
