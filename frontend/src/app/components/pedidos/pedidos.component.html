@@ -15,7 +15,7 @@
       <tbody>
         <tr>
           <td class="imagePreview">
-            <img [src]="'labarrosa-admin-production.up.railway.app/' + pedidos?.producto?.imagePath" alt="">
+            <img [src]="'https://labarrosa-admin-production.up.railway.app/' + pedidos?.producto?.imagePath" alt="">
           </td>
           <td [ngClass]="{'warning': pedidos.estado === 'Pendiente', 'enviado': pedidos.estado === 'Enviado'}">{{ pedidos.estado }}</td>
           <td>{{ pedidos.producto.title }}</td>

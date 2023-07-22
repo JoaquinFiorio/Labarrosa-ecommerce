@@ -16,7 +16,7 @@
   </div>
   <div class="productos" *ngIf="!filter">
     <div class="producto"  (click)="producto._id && selectedCard(producto._id)" *ngFor="let producto of productos">
-      <img [src]= "'labarrosa-admin-production.up.railway.app/' + producto.imagePath" alt="">
+      <img [src]= "'https://labarrosa-admin-production.up.railway.app/' + producto.imagePath" alt="">
       <div class="descripcion">
         <h3>{{ producto.title }}</h3>
         <span>{{ producto.categoria }}</span>
@@ -28,7 +28,7 @@
   <div class="productos" *ngIf="filter">
     <div *ngIf="filteredProductos.length !== 0">
       <div class="producto"  (click)="producto._id && selectedCard(producto._id)" *ngFor="let producto of filteredProductos">
-        <img [src]= "'labarrosa-admin-production.up.railway.app/' + producto.imagePath" alt="">
+        <img [src]= "'https://labarrosa-admin-production.up.railway.app/' + producto.imagePath" alt="">
         <div class="descripcion">
           <h3>{{ producto.title }}</h3>
           <span>{{ producto.categoria }}</span>

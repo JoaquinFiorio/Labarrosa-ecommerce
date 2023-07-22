@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AuthServiceService {
 
-  url = "labarrosa-ecommerce-production.up.railway.app/api";
+  url = "https://labarrosa-ecommerce-production.up.railway.app/api";
   user = "";
   usuarioActual = {}
 
