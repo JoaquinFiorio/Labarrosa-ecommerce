@@ -4,7 +4,7 @@
   </div>
   <div class="compras">
     <div class="producto" *ngFor="let producto of productoService.productosCarrito">
-      <img [src]="'http://localhost:4000/' + producto.imagePath" alt="">
+      <img [src]="'labarrosa-admin-production.up.railway.app/' + producto.imagePath" alt="">
       <div class="descripcion">
         <h3>{{ producto.title }}</h3>
         <span>{{ producto.categoria }}</span>
