@@ -29,9 +29,9 @@ crearOrden = async (req, res) => {
             }
         ],
         back_urls: {
-            success: 'https://loteria-backend-production.up.railway.app//api/pagar/success',
-            pendinding: 'https://loteria-backend-production.up.railway.app//api/pagar/pending',
-            failure: 'https://loteria-backend-production.up.railway.app//api/pagar/failure'
+            success: 'https://loteria-backend-production.up.railway.app/api/pagar/success',
+            pendinding: 'https://loteria-backend-production.up.railway.app/api/pagar/pending',
+            failure: 'https://loteria-backend-production.up.railway.app/api/pagar/failure'
         },
         notification_url: 'https://ab7a-45-224-102-140.ngrok-free.app/api/pagar/resultado'
     };
