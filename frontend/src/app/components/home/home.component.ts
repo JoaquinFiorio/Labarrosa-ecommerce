@@ -17,10 +17,6 @@ export class HomeComponent {
 
   constructor(private producto: ProductoServiceService, private router: Router) {}
 
-  ngOnIit() {
-
-  }
-
   ngOnInit() {
     this.producto.getPhotos()
       .subscribe({

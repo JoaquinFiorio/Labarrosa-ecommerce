@@ -13,10 +13,12 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { SesionGuard } from './guards/sesion.guard';
 import { AuthGuard } from './guards/auth.guard';
+import { OfertasInicioComponent } from './components/ofertas-inicio/ofertas-inicio.component';
 
 
 const routes: Routes = [
-  { path: "home", component: HomeComponent},
+  { path: "productos", component: HomeComponent},
+  { path: "home", component: OfertasInicioComponent},
   { path: "contacto", component: ContactoComponent},
   { path: "login", component: LoginComponent, canActivate: [SesionGuard]},
   { path: "registro", component: RegistroComponent, canActivate: [SesionGuard]},

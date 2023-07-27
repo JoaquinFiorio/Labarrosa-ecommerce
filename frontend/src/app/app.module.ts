@@ -24,6 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { OfertasInicioComponent } from './components/ofertas-inicio/ofertas-inicio.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     ResetComponent,
     ContactoComponent,
     ProductoComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    OfertasInicioComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
   ],
   providers: [
     AuthGuard,
