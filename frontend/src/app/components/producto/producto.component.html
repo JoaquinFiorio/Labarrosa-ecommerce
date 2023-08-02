@@ -4,7 +4,11 @@
     <div class="descripcion">
       <h3><span>Nombre del producto:</span> {{ producto?.title }}</h3>
       <h3><span>Categoría:</span> {{ producto?.categoria }}</h3>
-      <h3><span>Precio:</span> {{ producto?.precio | currency }}</h3>
+      <h3>
+        <span>Precio:</span>
+        {{ producto?.descuento ? (producto?.precio - producto?.descuento | currency) : (producto?.precio | currency) }}
+        <span *ngIf="producto?.descuento"><del>{{ producto?.precio | currency }}</del></span>
+      </h3>
       <h5><span>Descripción del producto:</span> {{ producto?.description }}</h5>
     </div>
   </div>

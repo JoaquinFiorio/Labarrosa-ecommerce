@@ -8,7 +8,7 @@
       <div class="descripcion">
         <h3>{{ producto.title }}</h3>
         <span>{{ producto.categoria }}</span>
-        <h3>{{ producto.precio | currency }}</h3>
+        <h3>{{ producto?.precio - producto?.descuento | currency }}</h3>
         <h5>{{ producto.description }}</h5>
       </div>
       <div class="eliminar">

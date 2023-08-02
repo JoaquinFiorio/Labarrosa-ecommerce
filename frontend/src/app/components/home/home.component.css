@@ -62,6 +62,7 @@ input[type="submit"]{
   color: white;
   width: 240px;
   cursor: pointer;
+  position: relative;
 }
 
 .producto img{
@@ -82,4 +83,19 @@ input[type="submit"]{
 
 form{
   display: flex;
+}
+
+.descuento{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(#ffde80, #f7aa5f);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  border-bottom-right-radius: 10px;
 }

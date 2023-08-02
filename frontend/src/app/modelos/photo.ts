@@ -4,5 +4,6 @@ export interface Photo {
   description: String;
   categoria: String;
   precio: any;
+  descuento: any;
   imagePath: string;
 }

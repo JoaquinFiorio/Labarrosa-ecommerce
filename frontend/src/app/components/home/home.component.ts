@@ -27,6 +27,10 @@ export class HomeComponent {
       })
   }
 
+  getPorcentajeDescuento(producto: any): number {
+    return Math.ceil(producto);
+  }
+
   selectedCard(id: string) {
     this.router.navigate(['/producto', id]);
   }

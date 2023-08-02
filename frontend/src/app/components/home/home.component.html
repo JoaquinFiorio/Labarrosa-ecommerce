@@ -20,21 +20,25 @@
       <div class="descripcion">
         <h3>{{ producto.title }}</h3>
         <span>{{ producto.categoria }}</span>
-        <h3>{{ producto.precio | currency }}</h3>
+        <h3>{{ producto.precio - producto.descuento | currency }} <span *ngIf="producto.descuento"><del>{{ producto?.precio | currency }}</del></span></h3>
         <h5>{{ producto.description }}</h5>
+      </div>
+      <div *ngIf="producto.descuento" class="descuento">
+        <h5>-{{ getPorcentajeDescuento(((producto.precio - (producto.precio - producto.descuento)) / producto.precio) * 100) }}%</h5>
       </div>
     </div>
   </div>
   <div class="productos" *ngIf="filter">
-    <div *ngIf="filteredProductos.length !== 0">
-      <div class="producto"  (click)="producto._id && selectedCard(producto._id)" *ngFor="let producto of filteredProductos">
-        <img [src]= "'https://labarrosa-admin-production.up.railway.app/' + producto.imagePath" alt="">
-        <div class="descripcion">
-          <h3>{{ producto.title }}</h3>
-          <span>{{ producto.categoria }}</span>
-          <h3>{{ producto.precio | currency }}</h3>
-          <h5>{{ producto.description }}</h5>
-        </div>
+    <div class="producto"  (click)="producto._id && selectedCard(producto._id)" *ngFor="let producto of filteredProductos">
+      <img [src]= "'https://labarrosa-admin-production.up.railway.app/' + producto.imagePath" alt="">
+      <div class="descripcion">
+        <h3>{{ producto.title }}</h3>
+        <span>{{ producto.categoria }}</span>
+        <h3>{{ producto.precio - producto.descuento | currency }} <span *ngIf="producto.descuento"><del>{{ producto?.precio | currency }}</del></span></h3>
+        <h5>{{ producto.description }}</h5>
+      </div>
+      <div *ngIf="producto.descuento" class="descuento">
+        <h5>-{{ getPorcentajeDescuento(((producto.precio - (producto.precio - producto.descuento)) / producto.precio) * 100) }}%</h5>
       </div>
     </div>
     <div class="mensajeValor" *ngIf="filteredProductos.length === 0">

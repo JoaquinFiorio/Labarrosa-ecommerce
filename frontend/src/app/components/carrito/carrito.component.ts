@@ -28,7 +28,7 @@ export class CarritoComponent {
 
   calcularTotal() {
     this.productoService.productosCarrito.forEach((producto) => {
-      this.total += parseFloat(producto.precio)
+      this.total += parseFloat(producto.precio) - producto.descuento
     })
   }
 
@@ -43,7 +43,7 @@ export class CarritoComponent {
     }).then((result: any) => {
       if (result.isConfirmed) {
         this.productoService.productosCarrito = this.productoService.productosCarrito.filter(p => p._id !== producto._id)
-        this.total -= parseFloat(producto.precio)
+        this.total -= parseFloat(producto.precio) - producto.descuento
         this.toastr.error('Producto eliminado del carrito', 'Sistema');
       } else if (result.dismiss === 'cancel') {
         this.toastr.warning('No lo eliminaste del carrito', 'Sistema');
