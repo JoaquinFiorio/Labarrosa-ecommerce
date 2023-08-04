@@ -29,11 +29,11 @@ crearOrden = async (req, res) => {
             }
         ],
         back_urls: {
-            success: 'https://loteria-backend-production.up.railway.app/api/pagar/success',
+            success: 'https://labarrosa-ecommerce-production.up.railway.app/api/pagar/success',
             pendinding: 'https://labarrosa-ecommerce.vercel.app/home',
             failure: 'https://labarrosa-ecommerce.vercel.app/home'
         },
-        notification_url: 'https://loteria-backend-production.up.railway.app/api/pagar/resultado'
+        notification_url: 'https://labarrosa-ecommerce-production.up.railway.app/api/pagar/resultado'
     };
     
     const result = await mercadopago.preferences.create(preference)
