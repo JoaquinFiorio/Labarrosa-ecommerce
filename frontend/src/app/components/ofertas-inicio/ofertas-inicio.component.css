@@ -1,0 +1,303 @@
+section{
+  margin-top: 50px;
+}
+
+.title{
+  color: white;
+  padding-left: 5%;
+}
+
+.swiper-container{
+  padding: 10%;
+  overflow-x: hidden;
+  margin-top: -100px;
+}
+
+.swiper-container img{
+  width: 40%;
+}
+
+.producto-card{
+  display: flex;
+  position: relative;
+  cursor: grab;
+}
+
+.descripcion{
+  background-color: #212121;
+  width: 250px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 7%;
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+.descripcion span, .producto span{
+  color: rgb(153, 149, 149);
+}
+
+.descuento{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(#ffde80, #f7aa5f);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  border-bottom-right-radius: 10px;
+}
+
+.producto-card button{
+  background: linear-gradient(#ffde80, #f7aa5f);
+  border: none;
+  font-weight: bold;
+}
+
+.producto-card button:hover{
+  background: linear-gradient(#ffdd80ce, #f7ab5fce);
+  cursor: pointer;
+}
+
+.categorias{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.categoria{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+.categoria:hover, .plato:hover{
+  transform: scale(1.04) ;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.categoria img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.ejemplos{
+  margin-top: 30px;
+  padding: 2%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.ejemplo{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #212121;
+  border-radius: 15px;
+  color: white;
+}
+
+span{
+  color: #f7aa5f;
+}
+
+.platos{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plato{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s;
+}
+
+.plato img{
+  width: 50%;
+}
+
+.division{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 5%;
+  background-color: #212121;
+  margin: 50px auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.division img{
+  width: 15%;
+  position: absolute;
+}
+
+.image1{
+  bottom: -45px;
+  right: 20px;
+  transform: rotate(25deg);
+}
+
+.image2{
+  bottom: 0;
+  right: 130px;
+  transform: rotate(-25deg);
+}
+
+.image3{
+  bottom: -80px;
+  right: 400px;
+  transform: rotate(-25deg);
+}
+
+.image4{
+  bottom: 30px;
+  right: 260px;
+  transform: rotate(10deg);
+}
+
+.division h1{
+  font-size: 35px;
+  color: white;
+  line-height: 1.2;
+}
+
+.frase{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.frase button{
+  cursor: pointer;
+  background-color: #f7aa5f;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  width: 150px;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #f7aa5f;
+}
+
+.frase button:hover{
+  background-color: transparent;
+  color: white;
+}
+
+.descuento{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(#ffde80, #f7aa5f);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  border-bottom-right-radius: 10px;
+}
+
+.productos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+  padding-left: 4%;
+}
+
+.producto{
+  background-color: #212121;
+  color: white;
+  width: 300px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.descripcionFrecuente{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  height: 180px;
+}
+
+.producto:hover{
+  transform: scale(1.03);
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.producto img{
+  width: 100%;
+}
+
+.productosFrecuentes{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.contenedorFrecuente{
+  overflow: hidden;
+  padding: 50px 0px;
+  width: 200%;
+}
+
+.container{
+  overflow: hidden;
+  padding: 0px 5%;
+}
+
+i{
+  color: #f7aa5f;
+  font-size: 60px;
+}
+
+.caracteristicas{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 0px 5%;
+  color: white;
+  gap: 10%;
+}
+
+.caracteristica{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.texto{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.texto p{
+  color: rgb(165, 163, 163);
+}

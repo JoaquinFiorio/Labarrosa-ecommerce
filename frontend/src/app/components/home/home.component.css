@@ -63,6 +63,12 @@ input[type="submit"]{
   width: 240px;
   cursor: pointer;
   position: relative;
+  transition: all 0.4s;
+}
+
+.producto:hover{
+  transform: scale(1.03);
+  transition: all 0.4s;
 }
 
 .producto img{

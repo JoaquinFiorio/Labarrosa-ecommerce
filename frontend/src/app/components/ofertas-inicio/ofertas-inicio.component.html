@@ -1,3 +1,127 @@
-<!-- <div *ngFor="let slide of productos" class="slide">
-  <img [src]="'https://labarrosa-admin-production.up.railway.app/' + slide.imagePath" alt="" width="100%">
-</div> -->
+<section>
+  <div class="title">
+    <h1>Productos más destacados</h1>
+  </div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div *ngFor="let producto of productos" class="swiper-slide">
+        <div class="producto-card">
+          <img [src]="'https://labarrosa-admin-production.up.railway.app/' + producto.imagePath" alt="" width="100%">
+          <div class="descripcion">
+            <h2>{{ producto.title }}</h2>
+            <span>{{ producto.categoria }}</span>
+            <p>{{ producto.description }}</p>
+            <h3>{{ producto.precio - producto.descuento | currency }} <span *ngIf="producto.descuento"><del>{{ producto?.precio | currency }}</del></span></h3>
+          </div>
+          <div *ngIf="producto.descuento" class="descuento">
+            <h5>-{{ getPorcentajeDescuento(((producto.precio - (producto.precio - producto.descuento)) / producto.precio) * 100) }}%</h5>
+          </div>
+          <button (click)="agregarAlCarrito(producto)">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="title">
+    <h1>Categorías populares</h1>
+  </div>
+  <div class="categorias">
+    <div routerLink="/productos" class="categoria">
+      <img src="../../../assets/img/foto2.jpeg" alt="">
+      <h3>Porta Sahumerios</h3>
+    </div>
+    <div routerLink="/productos" class="categoria">
+      <img src="../../../assets/img/foto9.jpeg" alt="">
+      <h3>Posa Tortas</h3>
+    </div>
+    <div routerLink="/productos" class="categoria">
+      <img src="../../../assets/img/foto5.jpeg" alt="">
+      <h3>Compoteras</h3>
+    </div>
+    <div routerLink="/productos" class="categoria">
+      <img src="../../../assets/img/foto11.jpeg" alt="">
+      <h3>Macetas</h3>
+    </div>
+    <div routerLink="/productos" class="categoria">
+      <img src="../../../assets/img/foto7.jpeg" alt="">
+      <h3>Porta Vela</h3>
+    </div>
+  </div>
+  <div class="ejemplos">
+    <div class="ejemplo">
+      <h2>Platos <span>></span></h2>
+      <div class="platos">
+        <div *ngFor="let plato of productosPlatos" class="plato" (click)="selectedCard(plato._id)">
+          <img [src]="'https://labarrosa-admin-production.up.railway.app/' + plato.imagePath" alt="" width="100%">
+          <h4>{{ plato.title }}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="ejemplo">
+      <h2>Macetas <span>></span></h2>
+      <div class="platos">
+        <div *ngFor="let maceta of productosMacetas" class="plato" (click)="selectedCard(maceta._id)">
+          <img [src]="'https://labarrosa-admin-production.up.railway.app/' + maceta.imagePath" alt="" width="100%">
+          <h4>{{ maceta.title }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="division">
+    <div class="frase">
+      <h1>El marketplace más seguro<br>de Pergamino</h1>
+      <button routerLink="/productos">Comprar</button>
+    </div>
+    <img class="image1" src="../../../assets/img/j1.png" alt="">
+    <img class="image2" src="../../../assets/img/j2.png" alt="">
+    <img class="image3" src="../../../assets/img/j3.png" alt="">
+    <img class="image4" src="../../../assets/img/j4.png" alt="">
+  </div>
+  <div>
+    <div class="title">
+      <h1>Lo más nuevo <span>></span></h1>
+    </div>
+    <div class="container">
+      <div class="contenedorFrecuente">
+        <div class="productosFrecuentes">
+          <div class="producto"  (click)="selectedCard(producto._id)" *ngFor="let producto of productos">
+            <img [src]= "'https://labarrosa-admin-production.up.railway.app/' + producto.imagePath" alt="">
+            <div class="descripcionFrecuente">
+              <h3>{{ producto.title }}</h3>
+              <span>{{ producto.categoria }}</span>
+              <h3>{{ producto.precio - producto.descuento | currency }} <span *ngIf="producto.descuento"><del>{{ producto?.precio | currency }}</del></span></h3>
+              <h5>{{ producto.description }}</h5>
+            </div>
+            <div *ngIf="producto.descuento" class="descuento">
+              <h5>-{{ getPorcentajeDescuento(((producto.precio - (producto.precio - producto.descuento)) / producto.precio) * 100) }}%</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="caracteristicas">
+    <div class="caracteristica">
+      <i class="fas fa-shopping-cart"></i>
+      <div class="texto">
+        <h2>Compra sin<br>estafas</h2>
+        <p>Verificamos cada transacción para garantizarte una compra segura</p>
+      </div>
+    </div>
+    <div class="caracteristica">
+      <i class="fas fa-box"></i>
+      <div class="texto">
+        <h2>Lo que se ve, es lo que llega</h2>
+        <p>Productos únicos, con la mejor calidad hechos a mano</p>
+      </div>
+    </div>
+    <div class="caracteristica">
+      <i class="fas fa-shield-alt"></i>
+      <div class="texto">
+        <h2>Siempre<br>protegido</h2>
+        <p>La mejor seguridad, para que tus datos esten seguros</p>
+      </div>
+    </div>
+  </div>
+</section>

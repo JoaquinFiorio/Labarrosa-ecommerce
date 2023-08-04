@@ -10,7 +10,8 @@ export class ProductoServiceService {
   constructor(private http: HttpClient) { }
 
   URI = 'https://labarrosa-admin-production.up.railway.app/api/photos';
-  productosCarrito: any[] = []
+  productosCarrito: any[] = [];
+  filter = '';
 
   getPhotos() {
     return this.http.get<Photo[]>(this.URI);
