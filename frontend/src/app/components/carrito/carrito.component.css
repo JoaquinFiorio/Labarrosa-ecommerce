@@ -84,3 +84,25 @@ section{
   font-weight: bold;
   font-size: 19px;
 }
+
+@media (max-width:525px) {
+  .compras{
+    align-items: center;
+  }
+  .producto{
+    flex-direction: column;
+    width: 60%;
+    padding-right: 0px;
+    padding-bottom: 10px;
+  }
+  .producto img{
+    width: 50%;
+  }
+  .descripcion{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .eliminar{
+    margin-left: 0px;
+  }
+}

@@ -6,7 +6,7 @@ import Swiper from 'swiper';
 @Component({
   selector: 'app-ofertas-inicio',
   templateUrl: './ofertas-inicio.component.html',
-  styleUrls: ['./ofertas-inicio.component.css']
+  styleUrls: ['./ofertas-inicio.component.css', '../../../responsive.css']
 })
 export class OfertasInicioComponent implements AfterViewInit{
   productos: any = [];
@@ -16,12 +16,26 @@ export class OfertasInicioComponent implements AfterViewInit{
   constructor(private productoService: ProductoServiceService, private router: Router, private toastr: ToastrService) {}
 
   ngAfterViewInit() {
+    this.initSwiper()
+  }
+
+  initSwiper() {
+    const windowWidth = window.innerWidth;
+    let slidesPerView = 2;
+    let spaceBetween = 20;
+
+    // Definir breakpoints y ajustar opciones según el ancho de pantalla
+    if (windowWidth <= 769) {
+      slidesPerView = 1;
+      spaceBetween = 10;
+    }
+
     new Swiper('.swiper-container', {
-      slidesPerView: 2,
-      spaceBetween: 20,
+      slidesPerView: slidesPerView,
+      spaceBetween: spaceBetween,
       loop: true,
       autoplay: {
-        delay: 1000, // 3000 milisegundos (3 segundos) entre cada desplazamiento
+        delay: 1000 // 1000 milisegundos (1 segundo) entre cada desplazamiento
       }
     });
   }

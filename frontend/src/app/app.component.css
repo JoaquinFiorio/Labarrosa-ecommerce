@@ -155,7 +155,7 @@ ul i, ul a{
 
 /*RESPONSIVE*/
 
-@media (max-width: 500px){
+@media (max-width: 700px){
   i{
     display: block;
   }
@@ -169,13 +169,16 @@ ul i, ul a{
     margin-left: -30px;
   }
   .logo .logotipo{
-    width: 15%;
+    width: 25%;
   }
   .logo .hbm{
     width: 25%;
   }
   .botones{
     margin-right: 0px;
+  }
+  .registro{
+    margin-left: -20px;
   }
   .footer{
     flex-direction: column;
@@ -195,6 +198,16 @@ ul i, ul a{
   #click:checked ~ .menu-btn i:before{
     content: "\f00d";
   }
+  /* 'right': '-625px', 'top': '-225px' */
+  .circuloCompra{
+    right: -95%;
+    top: -225px;
+  }
+  .circulo-checked{
+    bottom: -12px !important;
+    right: 46% !important;
+    top: 15px !important;
+  }
   nav{
     position: fixed;
     top: 0;
@@ -203,7 +216,7 @@ ul i, ul a{
     z-index: 999999;
   }
   .header{
-    margin-top: 50px;
+    margin-top: 75px;
   }
   nav{
     justify-content: flex-end;
@@ -242,5 +255,21 @@ ul i, ul a{
   }
   #click:checked ~ ul li a{
       margin-left: 0px;
+  }
+}
+
+@media (max-width:600px){
+  .circuloCompra{
+    right: -93%;
+  }
+  .circulo-checked{
+    right: 45% !important;
+  }
+}
+
+@media (max-width:500px){
+  .circuloCompra{
+    right: -92%;
+    top: -235px;
   }
 }

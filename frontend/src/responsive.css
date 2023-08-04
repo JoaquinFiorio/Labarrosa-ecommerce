@@ -65,3 +65,89 @@
     bottom: -40px;
   }
 }
+
+@media (max-width:769px) {
+  .swiper-container{
+    margin-top: 0px;
+  }
+  .descripcion{
+    width: 350px;
+  }
+  section{
+    overflow-x: hidden;
+  }
+  .ejemplos{
+    flex-direction: column;
+  }
+  .contenedorFrecuente{
+    width: 300%;
+  }
+  i{
+    font-size: 45px;
+  }
+  .texto h2{
+    font-size: 18px;
+  }
+}
+
+@media (max-width:600px){
+  .categoria img{
+    width: 70px;
+    height: 70px;
+  }
+  .categoria h3{
+    font-size: 15px;
+  }
+  .caracteristicas{
+    flex-direction: column;
+  }
+  .caracteristica{
+    margin-top: 30px;
+  }
+  br{
+    display: none;
+  }
+  .contenedorFrecuente{
+    width: 395%;
+  }
+  .descripcionFrecuente{
+    height: 200px;
+  }
+}
+
+@media (max-width: 500px){
+  .image4{
+    right: 210px;
+  }
+  .image1{
+    bottom: -15px;
+  }
+  .image3{
+    right: 350px;
+    bottom: -35px;
+  }
+}
+
+@media (max-width: 430px) {
+  .categoria h3{
+    font-size: 11px;
+  }
+  .plato h4{
+    font-size: 12px;
+  }
+  .image4{
+    right: 180px;
+  }
+  .descripcion{
+    gap: 3%;
+  }
+  .descripcion h2{
+    font-size: 18px;
+  }
+  .descripcion span{
+    font-size: 12px;
+  }
+  .descripcion p{
+    font-size: 14px;
+  }
+}

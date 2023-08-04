@@ -33,7 +33,7 @@ crearOrden = async (req, res) => {
             pendinding: 'https://labarrosa-ecommerce.vercel.app/home',
             failure: 'https://labarrosa-ecommerce.vercel.app/home'
         },
-        notification_url: 'https://ab7a-45-224-102-140.ngrok-free.app/api/pagar/resultado'
+        notification_url: 'https://loteria-backend-production.up.railway.app/api/pagar/resultado'
     };
     
     const result = await mercadopago.preferences.create(preference)

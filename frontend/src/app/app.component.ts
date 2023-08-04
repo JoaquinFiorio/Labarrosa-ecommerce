@@ -9,6 +9,7 @@ import { ProductoServiceService } from './servicios/producto-service.service';
 })
 export class AppComponent {
   title = 'frontend';
+  isChecked: boolean = false;
 
   constructor(public auth: AuthServiceService, public producto: ProductoServiceService) {}
 
