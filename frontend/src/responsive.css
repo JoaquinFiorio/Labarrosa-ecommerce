@@ -73,9 +73,6 @@
   .descripcion{
     width: 350px;
   }
-  section{
-    overflow-x: hidden;
-  }
   .ejemplos{
     flex-direction: column;
   }
