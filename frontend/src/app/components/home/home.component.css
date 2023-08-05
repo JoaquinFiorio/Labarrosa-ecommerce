@@ -105,3 +105,51 @@ form{
   color: black;
   border-bottom-right-radius: 10px;
 }
+
+@media (max-width: 650px) {
+  .contenedor{
+    flex-direction: column;
+    padding: 0px 5%;
+  }
+  .buscador{
+    padding-right: 0px;
+    border-right: none;
+    border-bottom: 3px solid #f7aa5f;
+  }
+  .categorias{
+    padding-bottom: 50px;
+  }
+  .productos{
+    padding-left: 0px;
+    margin-top: 50px;
+    justify-content: center;
+    gap: 30px;
+  }
+  .producto{
+    width: 185px;
+  }
+  del{
+    font-size: 12px;
+  }
+  .descripcion h3{
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 470px) {
+  .contenedor{
+    padding: 0px;
+  }
+  .buscador{
+    align-items: center;
+  }
+  .categorias{
+    align-items: center;
+  }
+  .descripcion{
+    height: 235px;
+  }
+  .producto{
+    width: 140px;
+  }
+}

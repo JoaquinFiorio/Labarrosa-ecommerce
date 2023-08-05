@@ -20,25 +20,25 @@
   </label>
   <ul>
     <li>
-      <a routerLink="/home">Inicio</a>
+      <a routerLink="/home" (click)="isChecked = false">Inicio</a>
     </li>
     <li>
-      <a routerLink="/productos">Productos</a>
+      <a routerLink="/productos" (click)="isChecked = false">Productos</a>
     </li>
     <li>
-      <a routerLink="/usuario">Usuario</a>
+      <a routerLink="/usuario" (click)="isChecked = false">Usuario</a>
     </li>
     <li>
-      <a routerLink="/contacto">Contáctenos</a>
+      <a routerLink="/contacto" (click)="isChecked = false">Contáctenos</a>
     </li>
-    <a routerLink="/carrito">
+    <a routerLink="/carrito" (click)="isChecked = false">
       <li>
         <i class="fas fa-shopping-cart"></i>
         <div class="circuloCompra" [ngClass]="{'circulo-checked': isChecked}">{{ producto.productosCarrito.length }}</div>
       </li>
     </a>
     <li>
-      <a routerLink="/pedidos">Mis Pedidos</a>
+      <a routerLink="/pedidos" (click)="isChecked = false">Mis Pedidos</a>
     </li>
   </ul>
 </nav>
