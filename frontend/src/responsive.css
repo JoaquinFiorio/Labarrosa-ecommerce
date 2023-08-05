@@ -101,7 +101,7 @@
   .caracteristica{
     margin-top: 30px;
   }
-  br{
+  .texto br, .frase br{
     display: none;
   }
   .contenedorFrecuente{
