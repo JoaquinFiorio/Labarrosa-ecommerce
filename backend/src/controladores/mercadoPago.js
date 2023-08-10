@@ -28,6 +28,12 @@ crearOrden = async (req, res) => {
             unit_price: req.body.precio
             }
         ],
+        payment_methods: {
+            excluded_payment_types: [
+              { id: 'ticket' }, // Excluye el pago en efectivo (por ejemplo, Pago Fácil)
+            ],
+            installments: 2, // Número máximo de cuotas
+        },
         back_urls: {
             success: 'https://labarrosa-ecommerce-production.up.railway.app/api/pagar/success',
             pendinding: 'https://labarrosa-ecommerce.vercel.app/home',
