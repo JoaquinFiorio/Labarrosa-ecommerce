@@ -21,10 +21,15 @@ export class HomeComponent {
     this.producto.getPhotos()
       .subscribe({
         next: res => {
-          this.productos = res;
+          res.forEach((e) => {
+            if(e.estado !== "Pedido") {
+              this.productos.push(e)
+            }
+          })
         },
         error: err => console.log(err)
       })
+      console.log(this.productos)
   }
 
   getPorcentajeDescuento(producto: any): number {

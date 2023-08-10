@@ -44,8 +44,10 @@ export class OfertasInicioComponent implements AfterViewInit{
     this.productoService.getPhotos()
       .subscribe({
         next: res => {
-          this.productos = res;
           res.forEach((e) => {
+            if(e.estado !== "Pedido") {
+              this.productos.push(e)
+            }
             if(this.productosPlatos.length < 3 && e.categoria === 'Platos') {
               this.productosPlatos.push(e)
             } else if(this.productosMacetas.length < 3 && e.categoria === 'Macetas') {

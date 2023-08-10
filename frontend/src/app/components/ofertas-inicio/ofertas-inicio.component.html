@@ -2,7 +2,10 @@
   <div class="title">
     <h1>Productos más destacados</h1>
   </div>
-  <div class="swiper-container">
+  <div class="mensajeValor" *ngIf="productos.length === 0">
+    <h1>No tenemos stock de productos por el momento</h1>
+  </div>
+  <div class="swiper-container" *ngIf="productos.length !== 0">
     <div class="swiper-wrapper">
       <div *ngFor="let producto of productos" class="swiper-slide">
         <div class="producto-card">

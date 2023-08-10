@@ -275,6 +275,15 @@ i{
   font-size: 60px;
 }
 
+h1{
+  color: white;
+}
+
+.mensajeValor{
+  margin: 50px auto;
+  text-align: center;
+}
+
 .caracteristicas{
   margin-top: 50px;
   display: flex;

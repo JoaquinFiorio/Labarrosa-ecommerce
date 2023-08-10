@@ -18,8 +18,7 @@ export class CarritoComponent {
 
   constructor(public productoService : ProductoServiceService,
     private auth: AuthServiceService,
-    private toastr: ToastrService,
-    private router: Router) {}
+    private toastr: ToastrService) {}
 
   ngOnInit() {
     this.calcularTotal();

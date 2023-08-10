@@ -14,6 +14,9 @@
       <h3 (click)="mostrarValor('Porta Tortas')">Porta Tortas</h3>
     </div>
   </div>
+  <div class="mensajeValor" *ngIf="productos.length === 0">
+    <h1>No tenemos stock de productos por el momento</h1>
+  </div>
   <div class="productos" *ngIf="!filter">
     <div class="producto"  (click)="producto._id && selectedCard(producto._id)" *ngFor="let producto of productos">
       <img [src]= "'https://labarrosa-admin-production.up.railway.app/' + producto.imagePath" alt="">
