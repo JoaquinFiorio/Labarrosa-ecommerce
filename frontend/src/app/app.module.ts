@@ -26,6 +26,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { OfertasInicioComponent } from './components/ofertas-inicio/ofertas-inicio.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
