@@ -82,7 +82,7 @@ export class CarritoComponent {
           this.toastr.success('Pedido realizado con éxito', 'Sistema');
           this.productoService.productosCarrito = []
           this.total = 0
-          window.location.href = res.sandbox_init_point
+          window.location.href = res.init_point
         },
         error: err => {
           console.log(err)
