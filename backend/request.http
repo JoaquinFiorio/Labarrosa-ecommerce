@@ -19,7 +19,7 @@ POST http://localhost:3000/api/user/signin
 Content-Type: application/json
 
 {
-    "email": "joaquin.fiorio12@hotmail.com",
+    "email": "joaquin.fiorio1@hotmail.com",
     "password": "12345"
 }
 
@@ -75,14 +75,18 @@ Content-Type: application/json
 ###
 POST http://localhost:3000/api/pagar/createOrder
 Content-Type: application/json
-x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YjE5ODZkZTM2YWM0Mjc3NTkyZTEwOSIsImlhdCI6MTY4OTM2MDQ5NiwiZXhwIjoxNjg5NDQ2ODk2fQ.O7lgHUnEcpljXaTYRamCPbwJrT6pcoyLv9crblpFXNk
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YjJkNzNjMmY0YmJiMjM5OGE2M2Q1MCIsImlhdCI6MTY5MTY4NDIxOCwiZXhwIjoxNjkxNzcwNjE4fQ.5XBvtroLXaPgzuAZherPB26zthgX0L3_6ss3YiwjnxM
 
 {
     "producto": {
-        "nombre": "Joaquin",
-        "precio": "Fiorio",
-        "categoria": "Argentina",
-        "descripcion": "Joaquin"
+        "_id": "64d50f385eb25f0027c2d8eb",
+        "title": "Jarron beige",
+        "description": "jarron lindo",
+        "precio": "120",
+        "categoria": "Jarrones",
+        "imagePath": "uploads/39a9a946-a534-41b6-8daf-31b0f2872d16.jpeg",
+        "descuento": 0,
+        "estado": ""
     },
     "precio": 12,
     "infoUsuario": {
@@ -94,3 +98,4 @@ x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YjE5ODZkZTM2YWM
         "direccion": "dorrego 630"
     }
 }
+

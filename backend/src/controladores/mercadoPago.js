@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const { v1: uuidv1 } = require('uuid');
 require("dotenv").config()
 const mercadopago = require('mercadopago');
+const axios = require('axios');
 
 let decoded;
 let producto;
@@ -14,7 +15,7 @@ crearOrden = async (req, res) => {
     decoded = jwt.verify(req.token, process.env.SECRET);
     producto = req.body.producto;
     infoUsuario = req.body.infoUsuario;
-    token = req.tokenn
+    token = req.token
     mercadopago.configure({
         access_token: 'APP_USR-7044245151571534-071913-ab34e28635ea1c6d392246582fc425be-185217523'
     });
@@ -69,12 +70,22 @@ recibirOrden = async (req, res) => {
                         };
                         user.pedidos.push(pedido);
                     })
+                    //https://labarrosa-admin-production.up.railway.app/api/pasarAPedido/
+                    const postResponse = await axios.post('http://localhost:4000/api/pasarAPedido/', producto);
+                    // Verifica la respuesta de la solicitud POST y toma medidas según sea necesario
+                    if (postResponse.status === 200) {
+                        // La solicitud POST se realizó con éxito en el otro servidor
+                        console.log('Solicitud POST exitosa en el otro servidor');
+                    } else {
+                        console.log('La solicitud POST al otro servidor no fue exitosa');
+                    }
 
                     pedido = []
                     infoUsuario = "";
                     token = ""
             
                     await user.save();
+                    // https://labarrosa-admin-production.up.railway.app/api/pasarAPedido/
                     return res.status(200).json({ message: "Pedido realizado con éxito" });
                 } catch (error) {
                     console.error(error);
