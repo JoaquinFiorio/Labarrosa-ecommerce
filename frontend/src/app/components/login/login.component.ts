@@ -20,6 +20,7 @@ export class LoginComponent {
     }
       this.auth.logIn(user).subscribe({
         next: res => {
+          setTimeout(this.auth.logOut, 86400)
           localStorage.setItem("token", res.token);
           localStorage.setItem("user", res.userFound.verificado);
 
