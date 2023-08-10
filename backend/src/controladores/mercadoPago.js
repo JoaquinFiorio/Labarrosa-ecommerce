@@ -82,9 +82,8 @@ recibirOrden = async (req, res) => {
                     pedido = []
                     infoUsuario = "";
                     token = ""
-            
+                    console.log(user)
                     await user.save();
-                    // https://labarrosa-admin-production.up.railway.app/api/pasarAPedido/
                     return res.status(200).json({ message: "Pedido realizado con éxito" });
                 } catch (error) {
                     console.error(error);
