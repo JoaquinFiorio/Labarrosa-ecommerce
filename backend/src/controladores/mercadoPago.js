@@ -70,8 +70,7 @@ recibirOrden = async (req, res) => {
                         };
                         user.pedidos.push(pedido);
                     })
-                    //https://labarrosa-admin-production.up.railway.app/api/pasarAPedido/
-                    const postResponse = await axios.post('http://localhost:4000/api/pasarAPedido/', producto);
+                    const postResponse = await axios.post('https://labarrosa-admin-production.up.railway.app/api/pasarAPedido/', producto);
                     // Verifica la respuesta de la solicitud POST y toma medidas según sea necesario
                     if (postResponse.status === 200) {
                         // La solicitud POST se realizó con éxito en el otro servidor
