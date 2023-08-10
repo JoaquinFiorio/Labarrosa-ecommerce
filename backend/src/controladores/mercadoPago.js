@@ -16,7 +16,7 @@ crearOrden = async (req, res) => {
     infoUsuario = req.body.infoUsuario;
     token = req.tokenn
     mercadopago.configure({
-        access_token: 'TEST-8584494645203056-071914-70a3935b6163ff23315a0626c491d7fd-1428283370'
+        access_token: 'APP_USR-7044245151571534-071913-ab34e28635ea1c6d392246582fc425be-185217523'
     });
     
     var preference = {
