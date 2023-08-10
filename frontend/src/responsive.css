@@ -70,6 +70,9 @@
   .swiper-container{
     margin-top: 0px;
   }
+  .swiper-container img{
+    width: 25%;
+  }
   .descripcion{
     width: 350px;
   }
@@ -94,6 +97,9 @@
   }
   .categoria h3{
     font-size: 15px;
+  }
+  .swiper-container img{
+    width: 35%;
   }
   .caracteristicas{
     flex-direction: column;
@@ -122,6 +128,9 @@
   .image3{
     right: 350px;
     bottom: -35px;
+  }
+  .swiper-container img{
+    width: 40%;
   }
 }
 
