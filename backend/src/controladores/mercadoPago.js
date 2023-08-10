@@ -19,10 +19,10 @@ crearOrden = async (req, res) => {
         access_token: 'APP_USR-7044245151571534-071913-ab34e28635ea1c6d392246582fc425be-185217523'
     });
     
-    var preference = {
+    const preference = {
         items: [
             {
-            title: 'Test',
+            title: 'Producto La Barrosa',
             quantity: 1,
             currency_id: 'ARS',
             unit_price: req.body.precio
@@ -30,9 +30,7 @@ crearOrden = async (req, res) => {
         ],
         payment_methods: {
             excluded_payment_methods: [], // No excluye ningún método de pago
-            excluded_payment_types: [
-              { id: 'ticket' }, // Excluye el pago en efectivo (por ejemplo, Pago Fácil)
-            ],
+            excluded_payment_types: [], // No excluye ningún tipo de pago
             installments: 2, // Número máximo de cuotas
         },
         back_urls: {
