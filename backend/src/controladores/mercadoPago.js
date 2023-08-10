@@ -29,6 +29,7 @@ crearOrden = async (req, res) => {
             }
         ],
         payment_methods: {
+            excluded_payment_methods: [], // No excluye ningún método de pago
             excluded_payment_types: [
               { id: 'ticket' }, // Excluye el pago en efectivo (por ejemplo, Pago Fácil)
             ],
