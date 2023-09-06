@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div *ngIf="usuario && usuario.pedidos && usuario.pedidos.length !== 0">
   <div class="pedidos" *ngFor="let pedidos of usuario.pedidos">
     <table>
@@ -32,3 +33,4 @@
 <div class="mensaje" *ngIf="usuario && usuario.pedidos && usuario.pedidos.length === 0">
   <h1>No hay pedidos activos en este usuario</h1>
 </div>
+<app-footer></app-footer>

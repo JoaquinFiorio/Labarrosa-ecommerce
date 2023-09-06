@@ -7,12 +7,6 @@ section{
   padding-left: 5%;
 }
 
-.swiper-container{
-  padding: 10%;
-  overflow-x: hidden;
-  margin-top: -100px;
-}
-
 .swiper-container img{
   width: 40%;
 }

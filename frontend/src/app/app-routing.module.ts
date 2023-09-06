@@ -14,9 +14,11 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { SesionGuard } from './guards/sesion.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { OfertasInicioComponent } from './components/ofertas-inicio/ofertas-inicio.component';
+import { PaginaWebComponent } from './components/pagina-web/pagina-web.component';
 
 
 const routes: Routes = [
+  { path: "", component: PaginaWebComponent},
   { path: "productos", component: HomeComponent},
   { path: "home", component: OfertasInicioComponent},
   { path: "contacto", component: ContactoComponent},
@@ -29,8 +31,7 @@ const routes: Routes = [
   { path: "usuario", component: UsuarioComponent, canActivate: [AuthGuard]},
   { path: "pedidos", component: PedidosComponent, canActivate: [AuthGuard]},
   { path: "carrito", component: CarritoComponent, canActivate: [AuthGuard]},
-  { path: "", redirectTo: "home", pathMatch: "full" },
-  { path: "**", redirectTo: "home" },
+  { path: "**", redirectTo: "" },
 ];
 
 @NgModule({

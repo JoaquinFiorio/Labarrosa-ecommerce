@@ -25,6 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { OfertasInicioComponent } from './components/ofertas-inicio/ofertas-inicio.component';
+import { PaginaWebComponent } from './components/pagina-web/pagina-web.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -43,6 +46,9 @@ import { OfertasInicioComponent } from './components/ofertas-inicio/ofertas-inic
     ProductoComponent,
     SpinnerComponent,
     OfertasInicioComponent,
+    PaginaWebComponent,
+    FooterComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ProductoServiceService } from 'src/app/servicios/producto-service.service';
 import Swiper from 'swiper';
+
 @Component({
   selector: 'app-ofertas-inicio',
   templateUrl: './ofertas-inicio.component.html',
