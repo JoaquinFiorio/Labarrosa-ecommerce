@@ -4,7 +4,7 @@ import Swiper from 'swiper';
 @Component({
   selector: 'app-pagina-web',
   templateUrl: './pagina-web.component.html',
-  styleUrls: ['./pagina-web.component.css']
+  styleUrls: ['./pagina-web.component.css', '../../../responsive.css', '../../../paginaWeb.css']
 })
 export class PaginaWebComponent {
 

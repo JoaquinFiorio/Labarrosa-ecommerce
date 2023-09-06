@@ -151,3 +151,60 @@
     font-size: 14px;
   }
 }
+
+@media (max-width:935px){
+  .aboutMe{
+      flex-direction: column;
+  }
+  .allProyects{
+      flex-direction: column;
+  }
+  .actualProyects{
+      margin-top: 20px;
+  }
+  .conteinerLink3{
+      flex-direction: column;
+      margin-top: 30px;
+  }
+}
+
+@media (max-width:680px){
+  header nav{
+      display: none;
+      visibility: hidden;
+      overflow-x: hidden;
+  }
+  header img{
+      display: none;
+  }
+  .contactWe{
+      flex-direction: column;
+  }
+  .capa{
+    display: none;
+  }
+  video{
+    display: none;
+  }
+  .contenedor{
+    margin-top: -200px;
+  }
+}
+
+@media (max-width:600px){
+  .conteiner{
+      flex-direction: column;
+  }
+  .row{
+      margin-top: 50px;
+  }
+  .profileImg img{
+      width: 300px;
+  }
+}
+
+@media (max-width:520px){
+  .name img{
+      width: 75%;
+  }
+}
