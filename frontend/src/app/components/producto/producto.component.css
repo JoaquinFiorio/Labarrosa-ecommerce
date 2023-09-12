@@ -42,3 +42,16 @@ button{
   font-weight: bold;
   font-size: 19px;
 }
+
+@media (max-width: 500px) {
+  .producto{
+    width: 90%;
+    flex-direction: column;
+  }
+  .descripcion{
+    padding: 10px 20px
+  }
+  .producto img{
+    width: 100%;
+  }
+}
